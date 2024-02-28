@@ -124,9 +124,14 @@ export default function Profile() {
     <div className='p-3 max-w-lg mx-auto'>
       <h1 className='text-3xl font-semibold text-center my-7'>Profile</h1>
       <Link to={'/profile'}>
-          <div className='bg-slate-400 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'>
+          <div className='  text-black rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'>
             update Credentials</div>
-        </Link>
+      </Link>
+      <Link to={'/create-listing'}>
+          <div className='  text-black rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'>
+           Rent a Car </div>
+      </Link>
+
       <div className='flex justify-between mt-5'>
         <span  onClick={handleDeleteUser} className='text-red-700 cursor-pointer'>Delete account</span>
         <span onClick={handleSignOut} className='text-red-700 cursor-pointer'>Sign out</span>

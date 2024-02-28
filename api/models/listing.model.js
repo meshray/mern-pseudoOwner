@@ -14,6 +14,10 @@ const listingSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    phoneNumber: {
+        type: Number,
+        required: true,
+      },
     city: {
       type: String,  
       required: true,
@@ -26,6 +30,10 @@ const listingSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    interCity: {
+        type: Boolean,
+        required: true,
+      },
     CarNumber: {
         type: String,
         required: true,
