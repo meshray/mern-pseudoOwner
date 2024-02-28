@@ -30,14 +30,18 @@ const listingSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    interCity: {
-        type: Boolean,
+    type: {
+        type: String,
         required: true,
       },
     CarNumber: {
         type: String,
         required: true,
-      },   
+      }, 
+      offer: {
+        type: Boolean,
+        required: true,
+      },  
     imageUrls: {
       type: Array,
       required: true,
