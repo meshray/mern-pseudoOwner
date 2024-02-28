@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Profile from "./pages/Profile";
 import Header from "./components/Header";
 import PrivateRoute from "./components/PrivateRoute";
+import MProfile from "./pages/MProfile";
 
 export default function App() {
   return <BrowserRouter>
@@ -17,7 +18,9 @@ export default function App() {
     <Route path="/About" element={<About/>}/>
     <Route element={<PrivateRoute />}>
           <Route path='/profile' element={<Profile />} />
+          <Route path='/mprofile' element={<MProfile />} />
         </Route>
+  
   </Routes>
   </BrowserRouter>
 }
