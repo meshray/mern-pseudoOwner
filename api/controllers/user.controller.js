@@ -3,6 +3,7 @@ import User from '../models/user.model.js';
 import { errorHandler } from '../utils/error.js';
 import Listing from '../models/listing.model.js';
 
+
 export const test = (req, res) => {
     res.json({
       message: 'Api route is working!',
@@ -63,3 +64,4 @@ export const test = (req, res) => {
       return next(errorHandler(401, 'You can only view your own listings!'));
     }
   };
+

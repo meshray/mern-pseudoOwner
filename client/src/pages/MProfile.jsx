@@ -29,6 +29,7 @@ export default function Profile() {
   const [updateSuccess, setUpdateSuccess] = useState(false);
   const [showListingsError, setShowListingsError] = useState(false);
   const [userListings, setUserListings] = useState([]);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -155,6 +156,8 @@ export default function Profile() {
     }
   };
 
+ 
+  
 
   return (
     <div className='p-3 max-w-lg mx-auto'>
@@ -169,6 +172,7 @@ export default function Profile() {
           Rent a Car 
         </div>
       </Link>
+     
       <div onClick={handleDeleteUser} className='text-black rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'>
         Delete account
       </div>
@@ -221,6 +225,7 @@ export default function Profile() {
           ))}
         </div>
       )}
+
     </div>
   );
 }
