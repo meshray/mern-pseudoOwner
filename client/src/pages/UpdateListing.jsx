@@ -11,7 +11,17 @@ import { useNavigate,useParams } from 'react-router-dom';
 
 
 export default function CreateListing() {
-    const cities = ['Jaipur', 'Delhi', 'Mumbai', 'Chandigarh', 'Agra','Pune','Banglore'];
+  const cities = [
+    "Jaipur",
+    "Delhi",
+    "Mumbai",
+    "Chandigarh",
+    "Agra",
+    "Pune",
+    "Banglore",
+    "Gurugram",
+    "Noida",
+  ];
     const { currentUser } = useSelector((state) => state.user);
     const navigate = useNavigate();
     const params = useParams();
@@ -27,7 +37,10 @@ export default function CreateListing() {
      discountPrice: 0,
      type:'',
      CarNumber:'',
-     offer: false
+     offer:true,
+     DriverName: "",
+    experience: 0,
+    available: false,
     });
     const [imageUploadError, setImageUploadError] = useState(false);
     const [uploading, setUploading] = useState(false);
@@ -135,7 +148,7 @@ export default function CreateListing() {
               city: e.target.value,
             });
           } 
-          if (e.target.id === 'offer'
+          if (e.target.id === 'offer'|| e.target.id === "available"
           ) {
             setFormData({
               ...formData,
@@ -238,6 +251,7 @@ export default function CreateListing() {
               className='border p-3 rounded-lg'
               required
              onChange={handleChange} 
+             value={formData.city}
             >
               <option value=''>Select a city</option>
               {cities.map((city, index) => (
@@ -264,7 +278,9 @@ export default function CreateListing() {
             </div>
             <div className='flex gap-2'>
               <input type='checkbox' id='offer' className='w-5'
-              onChange={handleChange} />
+              onChange={handleChange}
+              checked={formData.offer===true}
+              />
               <span>Offer</span>
             </div>
             </div>
@@ -277,7 +293,8 @@ export default function CreateListing() {
                 max='100000'
                 required
                 className='p-3 border border-gray-300 rounded-lg'
-                onChange={handleChange} 
+                onChange={handleChange}
+                value={formData.regularPrice} 
               />
               <div className='flex flex-col items-center'>
                 <p>Regular price</p>
@@ -300,6 +317,42 @@ export default function CreateListing() {
                   <p>Discounted price</p>
                   <span className='text-xs'>($ / month)</span>
                 </div>
+              </div>
+            )}
+          </div>
+          <div className="flex gap-2">
+            <input
+              type="checkbox"
+              id="available"
+              className="w-5"
+              onChange={handleChange}
+            />
+            <span>Driver Added </span>
+          </div>
+          <div>
+            {formData.available && (
+              <div className="flex flex-col gap-4 flex-1">
+                <input
+                  type="text"
+                  placeholder="Driver Name"
+                  className="border p-3 rounded-lg"
+                  id="DriverName" // Updated ID to match handleChange reference
+                  maxLength="62"
+                  minLength="7"
+                  required
+                  onChange={handleChange}
+                  value={formData.DriverName}
+                />
+                <input
+                  type="number"
+                  placeholder="Experience"
+                  id="experience"
+                  min="0"
+                  required
+                  className="p-3 border border-gray-300 rounded-lg"
+                  onChange={handleChange}
+                  value={formData.experience}
+                />
               </div>
             )}
           </div>

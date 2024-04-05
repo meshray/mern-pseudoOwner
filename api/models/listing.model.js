@@ -50,6 +50,18 @@ const listingSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    DriverName:{
+      type:String,
+      
+    },
+    experience:{
+      type:Number,
+     
+    },
+    available:{
+      type: Boolean,
+      required: true,
+    }
   },
   { timestamps: true }
 );

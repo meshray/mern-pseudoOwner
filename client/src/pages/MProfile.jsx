@@ -163,13 +163,13 @@ export default function Profile() {
     <div className='p-3 max-w-lg mx-auto'>
       <h1 className='text-3xl font-semibold text-center my-7'>Profile</h1>
       <Link to={'/profile'}>
-        <div className='bg-slate-400 black-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80 gap-4'>
+        <div className=' black-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80 gap-4'>
           Update Credentials 
         </div>
       </Link>
       <Link to={'/create-listing'}>
-        <div className='bg-slate-400 black-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80 '>
-          Rent a Car 
+        <div className=' black-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80 '>
+          List a Car Or Driver 
         </div>
       </Link>
      
