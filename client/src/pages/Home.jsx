@@ -4,8 +4,6 @@ import ListingItem from '../components/ListingItem';
 
 export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
-  const [saleListings, setSaleListings] = useState([]);
-  const [rentListings, setRentListings] = useState([]);
 
   useEffect(() => {
     const fetchOfferListings = async () => {
@@ -22,7 +20,6 @@ export default function Home() {
       try {
         const res = await fetch('/api/listing/get?type=rent&limit=4');
         const data = await res.json();
-        setRentListings(data);
         fetchSaleListings();
       } catch (error) {
         console.log(error);
